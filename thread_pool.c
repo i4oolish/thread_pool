@@ -21,7 +21,7 @@ static void InitWorker(struct ThreadWorker *worker)
 static void PushWorker(struct ThreadPool *pool, struct ThreadWorker *worker)
 {
     worker->next = pool->head;
-    pool->head   = NULL;
+    pool->head   = worker;
 }
 
 static void PopWorker(struct ThreadPool *pool, struct ThreadWorker *worker)
